@@ -14,7 +14,7 @@ int main()
             letter[i][s[i][j]-'a']++; //讀到英文字母後該陣列值+1
     }
     for(i=0;i<6;i=i+2)
-    {   
+    {
         for(j=0;j<26;j++)
             if(letter[i][j]>0&&letter[i+1][j]>0) //檢查是否兩句都有該字母，有則輸出
                 printf("%c",j+'a');
