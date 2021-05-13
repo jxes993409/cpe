@@ -6,7 +6,7 @@ int main()
 {
     int i=0,j,k,maxlen=0;
     char s[max][max];
-    while(gets(s[i])) //輸入失敗時跳出迴圈
+    while(gets(s[i])!=NULL) //輸入失敗時跳出迴圈
     {
         if(!(strcmp(s[i],"\t"))) //若讀到tab，則跳出迴圈
         {
