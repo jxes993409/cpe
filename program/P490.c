@@ -20,7 +20,7 @@ int main()
     for(j=0;j<maxlen;j++) //換列
     {
         for(k=i;k>=0;k--)
-            printf("%c",s[k][j]); //輸出列，從最下一個元素開始輸出
+            printf("%c",s[k][j]); //輸出列，從最下面的元素開始輸出
         printf("\n");
     }
     return 0;
