@@ -2,7 +2,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
-#define max 100
+#define max 1000
 
 void check(char,int *);
 void index_to_binary(char [],int,int);
