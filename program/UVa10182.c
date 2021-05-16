@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 int px, py;
+
 void f1() //左下
 {
 	px--;
@@ -49,42 +51,42 @@ int main()
 			n--;
 			t=pw;
 			//依序由左下、左、上、右上、右、下來符合順時針搜尋法則，每迴圈執行至超出該層為止
-			while(n && t)
+			while(n&&t)
 			{
 				n--;t--;
 				f1();
 			}
 			t=pw; //重置層數
-			while(n && t)
+			while(n&&t)
 			{
 				n--;t--;
 				f2();
 			}
 			t=pw; //重置層數
-			while(n && t)
+			while(n&&t)
 			{
 				n--;t--;
 				f3();
 			}
 			t=pw; //重置層數
-			while(n && t)
+			while(n&&t)
 			{
 				n--;t--;
 				f4();
 			}
 			t=pw; //重置層數
-			while(n && t)
+			while(n&&t)
 			{
 				n--;t--;
 				f5();
 			}
 			t=pw; //重置層數
-			while(n && t)
+			while(n&&t)
 			{
 				n--;t--;
 				f6();
 			}
-			printf("%d %d\n",px, py);
+			printf("%d %d\n",px,py);
 		}
 	}
 	return 0;
