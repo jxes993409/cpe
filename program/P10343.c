@@ -10,6 +10,8 @@ void combine(char [],int);
 void convert_to_ascii(char [],int [],int);
 void print(int [],int);
 
+//encode[]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+
 int main()
 {
     char s[max],binary[max*6];
