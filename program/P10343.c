@@ -6,7 +6,6 @@
 
 void check(char,int *);
 void index_to_binary(char [],int,int);
-void combine(char [],int);
 void convert_to_ascii(char [],int [],int);
 void print(int [],int);
 
@@ -33,7 +32,6 @@ int main()
                 check(s[i],&index[i]); //查詢讀取到字元的索引值
                 index_to_binary(binary,index[i],i); //將該字元的索引值轉換成二進制並記錄到binary
             }
-            combine(binary,n); //將倒序的二進制轉成正序
             convert_to_ascii(binary,decode,j); //以8個為一組的二進制值轉成十進制
             print(decode,j); //輸出轉換結果
         }
@@ -61,22 +59,10 @@ void check(char s,int *index)
 void index_to_binary(char binary[],int index,int i)
 {
     int j;
-    for(j=0;j<6;j++) //做2進制轉換，完成後為倒序，i*6為區分每個字元的空間
+    for(j=0;j<6;j++) //做2進制轉換，i*6為區分每個字元的空間
     {
-        binary[j+i*6]=(index%2)+'0';
+        binary[5-j+i*6]=(index%2)+'0';
         index=index/2;
-    }
-}
-
-void combine(char binary[],int n)
-{
-    int i,j;
-    char temp[n*6];
-    strcpy(temp,binary); //複製binary做正序
-    for(j=0;j<n;j++)
-    {    
-        for(i=0;i<6;i++) //每個字元的二進制的值分開做正序處理
-            binary[i+j*6]=temp[5-i+j*6];
     }
 }
 
