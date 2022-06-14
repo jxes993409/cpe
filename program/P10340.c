@@ -4,24 +4,30 @@
 
 int main()
 {
-    int i,flag,j;
-    char s[max],t[max];
-    while(scanf("%s %s",s,t)!=EOF)
+  int i, flag, j;
+  char s[max], t[max];
+  while(scanf("%s %s", s, t) != EOF)
+  {
+    flag = 0, j = 0;
+    for(i = 0; i < strlen(s); i++)
     {
-        flag=0,j=0;
-        for(i=0;i<strlen(s);i++)
+      for(j = j; j < strlen(t); j++) //只能往後檢查，若找到符合字元便跳出迴圈
+      {
+        if(s[i] == t[j])
         {
-            for(j=j;j<strlen(t);j++) //只能往後檢查，若找到符合字元便跳出迴圈
-            {
-                if(s[i]==t[j])
-                {
-                    flag++;
-                    break;
-                }
-            }
+          flag++;
+          break;
         }
-        if(flag==strlen(s)) printf("Yes\n");
-        else printf("No\n");
+      }
     }
-    return 0;
+    if(flag == strlen(s))
+    {
+      printf("Yes\n");
+    }
+    else
+    {
+      printf("No\n");
+    }
+  }
+  return 0;
 }
