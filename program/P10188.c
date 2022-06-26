@@ -6,7 +6,7 @@
 int main()
 {
   int n, m, i, j, sum_flag, flag, count = 0;
-  int run[100] = {0};            //讓輸出結果一起輸出
+  int run[100] = {0}; //讓輸出結果一起輸出
   while(scanf("%d", &n) != EOF) //讀取標準解答共有幾列
   {
     if(!n)

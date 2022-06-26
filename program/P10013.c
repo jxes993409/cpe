@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define max 1000000
+#include <string.h>
 
 int main()
 {
@@ -13,15 +13,25 @@ int main()
     int *s = (int *)malloc(M * sizeof(int));
     int *t = (int *)malloc(M * sizeof(int));
     int carry = 0;
+    memset(sum, 0, M * sizeof(int));
+    memset(s, 0, M * sizeof(int));
+    memset(t, 0, M * sizeof(int));
     for(j = M - 1; j >= 0; j--)
     {
       scanf("%d %d", &s[j], &t[j]); //讀取輸入的值
     }
     for(j = 0; j < M; j++)
     {
-      if (carry) sum[j]++; //如果有進位，則該位元+1
+      if(carry)
+      {
+        sum[j]++; //如果有進位，則該位元+1
+      }
       sum[j] += (s[j] + t[j]) % 10;
       carry = (s[j] + t[j]) / 10; //若相加超過10，則下個位元進位
+    }
+    if(carry)
+    {
+      printf("1");
     }
     for(j = M - 1; j >= 0; j--)
     {
