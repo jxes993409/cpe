@@ -4,26 +4,33 @@
 
 int main()
 {
-  int i = 0, j, k, maxlen = 0;
+  int count = 0, maxlen = 0, i, j;
   char s[max][max];
-  while(gets(s[i]) != NULL) //輸入失敗時跳出迴圈
+  while(gets(s[count])) //輸入失敗時跳出迴圈
   {
-    if(!(strcmp(s[i], "\t"))) //若讀到tab，則跳出迴圈
+    if(!(strcmp(s[count], "\t"))) //若讀到tab，則跳出迴圈
     {
-      i--;
+      count--;
       break;
     }
-    if(strlen(s[i]) >= maxlen) //找出最長的字串並記錄
+    if(strlen(s[count]) > maxlen) //找出最長的字串並記錄
     {
-      maxlen = strlen(s[i]);
+      maxlen = strlen(s[count]);
     }
-    i++; //紀錄共有幾行
+    count++; //紀錄共有幾行
   }
-  for(j = 0; j < maxlen; j++) //換列
+  for(i = 0; i < maxlen; i++) //換列
   {
-    for(k = i; k >= 0; k--)
+    for(j = count; j >= 0; j--)
     {
-      printf("%c", s[k][j]); //輸出列，從最下面的元素開始輸出
+      if(i >= strlen(s[j]))
+      {
+        printf(" ");
+      }
+      else
+      {
+        printf("%c", s[j][i]);  //輸出列，從最下面的元素開始輸出
+      }
     }
     printf("\n");
   }
